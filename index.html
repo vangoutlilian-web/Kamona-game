@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kamona — Le jeu de mémoire</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="hero">
+      <h1>🂠 Kamona</h1>
+      <p class="tagline">Trouve toutes les paires avant la fin du temps imparti&nbsp;!</p>
+    </header>
+
+    <section class="hud" aria-label="Statistiques de partie">
+      <div class="stat">
+        <span class="label">Coups</span>
+        <span class="value" id="moves">0</span>
+      </div>
+      <div class="stat">
+        <span class="label">Paires</span>
+        <span class="value"><span id="pairs">0</span>/<span id="totalPairs">0</span></span>
+      </div>
+      <div class="stat">
+        <span class="label">Temps</span>
+        <span class="value" id="timer">00:00</span>
+      </div>
+      <div class="stat">
+        <span class="label">Meilleur</span>
+        <span class="value" id="best">—</span>
+      </div>
+    </section>
+
+    <section class="controls">
+      <label for="difficulty">Difficulté&nbsp;:</label>
+      <select id="difficulty">
+        <option value="4">Facile (4×4)</option>
+        <option value="6" selected>Normal (6×6)</option>
+        <option value="8">Difficile (8×8)</option>
+      </select>
+      <button id="newGame" class="btn primary">Nouvelle partie</button>
+    </section>
+
+    <section id="board" class="board" aria-label="Plateau de jeu"></section>
+
+    <div id="overlay" class="overlay hidden">
+      <div class="overlay-card">
+        <h2 id="overlayTitle">Bravo&nbsp;!</h2>
+        <p id="overlayText"></p>
+        <button id="overlayBtn" class="btn primary">Rejouer</button>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>Kamona — un jeu de mémoire. Clique sur deux cartes pour former une paire.</p>
+    </footer>
+  </div>
+
+  <audio id="flipSound" preload="auto" src="data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQAAAAA="></audio>
+  <script src="game.js"></script>
+</body>
+</html>
