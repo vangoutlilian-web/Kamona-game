@@ -8,8 +8,8 @@
     return {
       x: c[0], z: c[1],
       yaw: 0,
-      speed: 2.1,
-      chaseSpeed: 3.6,
+      speed: 1.8,
+      chaseSpeed: 2.2,
       state: "patrol",
       path: null,
       pathIdx: 0,
@@ -24,8 +24,8 @@
   Monster.update = function (m, g, player, dt, running, onEvent) {
     var dx = player.x - m.x, dz = player.z - m.z;
     var dist = Math.sqrt(dx * dx + dz * dz);
-    var canSee = dist < 16 && Grid.losClear(g, m.x, m.z, player.x, player.z);
-    var hears = running && dist < 12;
+    var canSee = dist < 7 && Grid.losClear(g, m.x, m.z, player.x, player.z);
+    var hears = running && dist < 4.5;
 
     if (canSee || hears) {
       if (m.state !== "chase") { m.state = "chase"; if (onEvent) onEvent("chase"); }

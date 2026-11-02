@@ -324,7 +324,7 @@
     var run = keys["ShiftLeft"] || keys["ShiftRight"];
     if (run && stamina > 0) stamina = Math.max(0, stamina - dt * 22);
     else stamina = Math.min(100, stamina + dt * 14);
-    var speed = run && stamina > 0 ? 5.4 : 3.1;
+    var speed = run && stamina > 0 ? 4.3 : 3.1;
 
     var f = [Math.sin(player.yaw), Math.cos(player.yaw)];
     var r = [Math.cos(player.yaw), -Math.sin(player.yaw)];
