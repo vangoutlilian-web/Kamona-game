@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kamona Horror — Survival 3D</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <div id="vig" class="vig"></div>
+  <div id="dmg" class="dmg"></div>
+  <div id="cross" class="cross">+</div>
+
+  <div id="hud" class="hud">
+    <div class="hud-item"><span class="hud-label">Reliques</span><span class="hud-value" id="hudRelics">0 / 6</span></div>
+    <div class="hud-item"><span class="hud-label">Temps</span><span class="hud-value" id="hudTime">00:00</span></div>
+    <div class="hud-item stamina"><span class="hud-label">Endurance</span><div class="stamina-bar"><div id="staminaFill" class="stamina-fill"></div></div></div>
+  </div>
+
+  <div id="hint" class="hint hidden">WASD — bouger · Souris — regarder · Shift — courir · Ramasse les 6 reliques, puis atteins la croix verte.</div>
+
+  <div id="menu" class="overlay">
+    <div class="panel">
+      <h1>Kamona <span>Horror</span></h1>
+      <p class="sub">Un labyrinthe. Une créature. Six reliques. Une seule sortie.</p>
+      <ul class="rules">
+        <li>🕯️ Ta lampe est ta seule lumière.</li>
+        <li>💀 Ramasse les <b>6 reliques</b> pour déverrouiller la porte.</li>
+        <li>👹 Si elle te touche, c'est fini. Cours (Shift) quand elle est loin.</li>
+      </ul>
+      <button id="playBtn" class="btn">▶ Jouer</button>
+      <p class="controls-hint">WASD / flèches — bouger · Souris — regarder · Shift — courir</p>
+    </div>
+  </div>
+
+  <div id="overlay" class="overlay hidden">
+    <div class="panel">
+      <h2 id="ovTitle"></h2>
+      <p id="ovText"></p>
+      <button id="ovBtn" class="btn">Rejouer</button>
+    </div>
+  </div>
+
+  <div id="nogl" class="overlay" style="display:none">
+    <div class="panel">
+      <h2>WebGL indisponible</h2>
+      <p>Ce jeu nécessite un navigateur supportant WebGL.</p>
+    </div>
+  </div>
+
+  <script src="js/math.js"></script>
+  <script src="js/grid.js"></script>
+  <script src="js/world.js"></script>
+  <script src="js/monster.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/engine.js"></script>
+</body>
+</html>
